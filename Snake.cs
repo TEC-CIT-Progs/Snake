@@ -7,7 +7,10 @@ using System.Threading;
 
 namespace Snakes
 {
-
+    //apple can spawne inde i kroppen på slangen hvor de forsvinder når den sidste del af kroppen er gået over æblet
+    //man kan gå igennem sin egen krop
+    //start menu
+    //point tæller inde i spillet
     class Point
     {
         public Point(int x, int y)
@@ -62,7 +65,10 @@ namespace Snakes
 
             tail = new List<Point>();
         }
-
+        /// <summary>
+        /// oprettelse af ascii border til at begrænse banen.
+        /// størrelsen er bestemt ud fra vinduets brede og højde.
+        /// </summary>
         public void ShowBorder()
         {
             // show border "╔═╗║╚╝"
