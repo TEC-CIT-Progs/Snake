@@ -38,7 +38,7 @@ namespace Snakes
         int points;
 
         List<Point> tail;
-
+     
         public Snake()
         {
             // Init windows size
@@ -94,13 +94,16 @@ namespace Snakes
             }
             Console.Write("╝");
         }
-
-        public void newApple()
+        /// <summary>
+        /// Vi giver æblet en ny position, og placere æblet.
+        /// </summary>
+        
+        public void newApple() 
         {
             appleX = rand.Next(1, Console.WindowWidth - 1);
             appleY = rand.Next(1, Console.WindowHeight - 1);
             Console.SetCursorPosition(appleX, appleY);
-            Console.Write("#");
+            Console.Write("♥");
         }
 
         public void eatApple()
@@ -109,7 +112,7 @@ namespace Snakes
             appleX = -1;
             appleY = -1;
         }
-
+            
         public void MainLoop()
         {
             while (alive)
@@ -139,7 +142,7 @@ namespace Snakes
 
                 GetDirection();
 
-                alive = isAlive();
+                alive = IsAlive();
 
             }
 
@@ -149,7 +152,7 @@ namespace Snakes
 
         }
 
-        private bool isAlive()
+        private bool IsAlive()
         {
             // check if we're dead
             if (snakeHeadX <= 0)
@@ -197,6 +200,10 @@ namespace Snakes
             }
         }
 
+        /// <summary>
+        /// Skifter retning på hvor spilleren bevæger sig ud fra spillerens input
+        /// Spillerens input kan være piletasterne på deres keyboard.
+        /// </summary>
         private void MoveHead()
         {
             // moving right
