@@ -37,6 +37,10 @@ namespace Snakes
 
         List<Point> tail;
 
+        /// <summary>
+        /// Sætter dit windows størrelse, hvor spilleren starter henne,
+        /// og hvilken vej den starter samt hvor det første æble bliver placeret.
+        /// </summary>        
         public Snake()
         {
             // Init windows size
@@ -93,12 +97,12 @@ namespace Snakes
             Console.Write("╝");
         }
 
-        public void newApple()
+        public void newApple() 
         {
             appleX = rand.Next(1, Console.WindowWidth - 1);
             appleY = rand.Next(1, Console.WindowHeight - 1);
             Console.SetCursorPosition(appleX, appleY);
-            Console.Write("#");
+            Console.Write("♥");
         }
 
         public void eatApple()
@@ -107,7 +111,7 @@ namespace Snakes
             appleX = -1;
             appleY = -1;
         }
-
+            
         public void MainLoop()
         {
             while (alive)
