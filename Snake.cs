@@ -7,7 +7,9 @@ using System.Threading;
 
 namespace Snakes
 {
-
+    /// <summary>
+    /// Point class with constructor that creates point objects with x and y coordinates from int parameters. X and Y properties have get & set.
+    /// </summary>
     class Point
     {
         public Point(int x, int y)
@@ -36,7 +38,7 @@ namespace Snakes
         int points;
 
         List<Point> tail;
-
+     
         public Snake()
         {
             // Init windows size
@@ -62,7 +64,10 @@ namespace Snakes
 
             tail = new List<Point>();
         }
-
+        /// <summary>
+        /// oprettelse af ascii border til at begrænse banen.
+        /// størrelsen er bestemt ud fra vinduets brede og højde.
+        /// </summary>
         public void ShowBorder()
         {
             // show border "╔═╗║╚╝"
@@ -92,13 +97,16 @@ namespace Snakes
             }
             Console.Write("╝");
         }
-
-        public void newApple()
+        /// <summary>
+        /// Vi giver æblet en ny position, og placere æblet.
+        /// </summary>
+        
+        public void newApple() 
         {
             appleX = rand.Next(1, Console.WindowWidth - 1);
             appleY = rand.Next(1, Console.WindowHeight - 1);
             Console.SetCursorPosition(appleX, appleY);
-            Console.Write("#");
+            Console.Write("♥");
         }
 
         public void eatApple()
@@ -107,7 +115,12 @@ namespace Snakes
             appleX = -1;
             appleY = -1;
         }
-
+        /// <summary>
+        /// Det meste af spillet er placeret her
+        /// det vil sige alive status, hovedets position, æbler og Game Over
+        /// hvis man spiser et æble ændre hovedets position
+        /// hvis man taber vil alive metoden returnere false og bryde vores while loop og vise Game Over
+        /// </summary>
         public void MainLoop()
         {
             while (alive)
@@ -137,7 +150,7 @@ namespace Snakes
 
                 GetDirection();
 
-                alive = isAlive();
+                alive = IsAlive();
 
             }
 
@@ -147,7 +160,7 @@ namespace Snakes
 
         }
 
-        private bool isAlive()
+        private bool IsAlive()
         {
             // check if we're dead
             if (snakeHeadX <= 0)
@@ -169,7 +182,10 @@ namespace Snakes
             else
                 return true;
         }
-
+        /// <summary>
+        /// Get direction er metoden der modtager spiller inputs på pil tasterne
+        /// og videre giver inputet til move head for at flytte hovedets retning i spillet.
+        /// </summary>
         private void GetDirection()
         {
             // check keys
@@ -195,6 +211,10 @@ namespace Snakes
             }
         }
 
+        /// <summary>
+        /// Skifter retning på hvor spilleren bevæger sig ud fra spillerens input
+        /// Spillerens input kan være piletasterne på deres keyboard.
+        /// </summary>
         private void MoveHead()
         {
             // moving right
