@@ -140,7 +140,7 @@ namespace Snakes
 
                 GetDirection();
 
-                alive = isAlive();
+                alive = IsAlive();
 
             }
 
@@ -150,7 +150,7 @@ namespace Snakes
 
         }
 
-        private bool isAlive()
+        private bool IsAlive()
         {
             // check if we're dead
             if (snakeHeadX <= 0)
