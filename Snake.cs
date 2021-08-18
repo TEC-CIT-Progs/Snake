@@ -64,7 +64,10 @@ namespace Snakes
 
             tail = new List<Point>();
         }
-
+        /// <summary>
+        /// oprettelse af ascii border til at begrænse banen.
+        /// størrelsen er bestemt ud fra vinduets brede og højde.
+        /// </summary>
         public void ShowBorder()
         {
             // show border "╔═╗║╚╝"
@@ -112,7 +115,12 @@ namespace Snakes
             appleX = -1;
             appleY = -1;
         }
-            
+        /// <summary>
+        /// Det meste af spillet er placeret her
+        /// det vil sige alive status, hovedets position, æbler og Game Over
+        /// hvis man spiser et æble ændre hovedets position
+        /// hvis man taber vil alive metoden returnere false og bryde vores while loop og vise Game Over
+        /// </summary>
         public void MainLoop()
         {
             while (alive)
@@ -174,7 +182,10 @@ namespace Snakes
             else
                 return true;
         }
-
+        /// <summary>
+        /// Get direction er metoden der modtager spiller inputs på pil tasterne
+        /// og videre giver inputet til move head for at flytte hovedets retning i spillet.
+        /// </summary>
         private void GetDirection()
         {
             // check keys
