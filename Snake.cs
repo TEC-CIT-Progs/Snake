@@ -195,6 +195,10 @@ namespace Snakes
             }
         }
 
+        /// <summary>
+        /// Skifter retning på hvor spilleren bevæger sig ud fra spillerens input
+        /// Spillerens input kan være piletasterne på deres keyboard.
+        /// </summary>
         private void MoveHead()
         {
             // moving right
