@@ -218,7 +218,9 @@ namespace Snakes
                 snakeHeadY += 1;
             }
         }
-
+        /// <summary>
+        /// shows the tail by replaysing the old head and removeing the exesive tail end
+        /// </summary>
         private void ShowTail()
         {
             // overwrite old snake head, with tail
