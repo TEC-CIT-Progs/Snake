@@ -10,6 +10,11 @@ namespace Snakes
 
     class Point
     {
+        /// <summary>
+        /// Constructor that creates point objects with X and Y coordinates from parameters
+        /// </summary>
+        /// <param name="x">Horizontal coordinate</param>
+        /// <param name="y">Vertical coordinate</param>
         public Point(int x, int y)
         {
             this.x = x;
