@@ -7,18 +7,29 @@ using System.Threading;
 
 namespace Snakes
 {
-    //apple can spawne inde i kroppen på slangen hvor de forsvinder når den sidste del af kroppen er gået over æblet
-    //man kan gå igennem sin egen krop
-    //start menu
-    //point tæller inde i spillet
+    /// <summary>
+    /// Point er en lille hjælpeklasse til at håndtere et objekt med to hekltalsværdier.
+    /// Et punkt er et koordinat på skærmen, og indeholder derfor et x og et y
+    /// </summary>
     class Point
     {
+        /// <summary>
+        /// Initialiser en instans af klassen Point.
+        /// </summary>
+        /// <param name="x">startværdien for den horisontale komponent</param>
+        /// <param name="y">startværdien for den vertikale komponent</param>
         public Point(int x, int y)
         {
             this.x = x;
             this.y = y;
         }
+        /// <summary>
+        /// Propperty x, den horisontale komponent
+        /// </summary>
         public int x { get; set; }
+        /// <summary>
+        /// Property y den vertikale komponent
+        /// </summary>
         public int y { get; set; }
     }
 
@@ -39,7 +50,7 @@ namespace Snakes
         int points;
 
         List<Point> tail;
-
+     
         public Snake()
         {
             // Init windows size
@@ -98,13 +109,16 @@ namespace Snakes
             }
             Console.Write("╝");
         }
-
-        public void newApple()
+        /// <summary>
+        /// Vi giver æblet en ny position, og placere æblet.
+        /// </summary>
+        
+        public void newApple() 
         {
             appleX = rand.Next(1, Console.WindowWidth - 1);
             appleY = rand.Next(1, Console.WindowHeight - 1);
             Console.SetCursorPosition(appleX, appleY);
-            Console.Write("#");
+            Console.Write("♥");
         }
 
         public void eatApple()
@@ -148,7 +162,7 @@ namespace Snakes
 
                 GetDirection();
 
-                alive = isAlive();
+                alive = IsAlive();
 
             }
 
@@ -158,7 +172,7 @@ namespace Snakes
 
         }
 
-        private bool isAlive()
+        private bool IsAlive()
         {
             // check if we're dead
             if (snakeHeadX <= 0)
@@ -209,6 +223,10 @@ namespace Snakes
             }
         }
 
+        /// <summary>
+        /// Skifter retning på hvor spilleren bevæger sig ud fra spillerens input
+        /// Spillerens input kan være piletasterne på deres keyboard.
+        /// </summary>
         private void MoveHead()
         {
             // moving right
