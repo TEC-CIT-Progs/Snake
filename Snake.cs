@@ -180,7 +180,10 @@ namespace Snakes
             else
                 return true;
         }
-
+        /// <summary>
+        /// Get direction er metoden der modtager spiller inputs på pil tasterne
+        /// og videre giver inputet til move head for at flytte hovedets retning i spillet.
+        /// </summary>
         private void GetDirection()
         {
             // check keys
