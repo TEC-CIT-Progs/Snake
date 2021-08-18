@@ -36,11 +36,7 @@ namespace Snakes
         int points;
 
         List<Point> tail;
-
-        /// <summary>
-        /// Sætter dit windows størrelse, hvor spilleren starter henne,
-        /// og hvilken vej den starter samt hvor det første æble bliver placeret.
-        /// </summary>        
+     
         public Snake()
         {
             // Init windows size
@@ -96,7 +92,10 @@ namespace Snakes
             }
             Console.Write("╝");
         }
-
+        /// <summary>
+        /// Vi giver æblet en ny position, og placere æblet.
+        /// </summary>
+        
         public void newApple() 
         {
             appleX = rand.Next(1, Console.WindowWidth - 1);
