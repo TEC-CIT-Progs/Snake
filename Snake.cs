@@ -7,15 +7,29 @@ using System.Threading;
 
 namespace Snakes
 {
-
+    /// <summary>
+    /// Point er en lille hjælpeklasse til at håndtere et objekt med to hekltalsværdier.
+    /// Et punkt er et koordinat på skærmen, og indeholder derfor et x og et y
+    /// </summary>
     class Point
     {
+        /// <summary>
+        /// Initialiser en instans af klassen Point.
+        /// </summary>
+        /// <param name="x">startværdien for den horisontale komponent</param>
+        /// <param name="y">startværdien for den vertikale komponent</param>
         public Point(int x, int y)
         {
             this.x = x;
             this.y = y;
         }
+        /// <summary>
+        /// Propperty x, den horisontale komponent
+        /// </summary>
         public int x { get; set; }
+        /// <summary>
+        /// Property y den vertikale komponent
+        /// </summary>
         public int y { get; set; }
     }
 
